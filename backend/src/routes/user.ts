@@ -29,7 +29,7 @@ userRouter.post('/signup', async(c) => {
   try {
     const finduser = await prisma.user.findFirst({
       where: {
-        email: body.email
+        email: body.email 
       },
     });
     if(finduser) {
@@ -105,7 +105,7 @@ userRouter.get('/getuser/:id', async(c) => {
     const user = await prisma.user.findFirst({
       where: {
         id: authorid,
-      },
+      }, 
     });
     if (!user) {
       c.status(411);
